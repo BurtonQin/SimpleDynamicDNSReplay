@@ -21,7 +21,7 @@ __status__ = "Production"
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-server_address = ('share.gtensor.com', 10000)
+server_address = ('dns-server-ip', 10000)
 path = os.path.dirname(os.path.realpath(__file__))
 message = subprocess.check_output([path + '/get_ip.sh'])
 

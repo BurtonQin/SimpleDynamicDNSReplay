@@ -9,11 +9,21 @@ HOSTNAME\nIPv4\nIPv6
 ```
 
 * Client
+
 Report local IP every hour(It depends on dhcp lease time) to the server.
 Note that the hostnames of all the clients in one server domain shall not be the same.
 
 * Server
+
 Receive the report and change the /etc/hosts, then restart the dnsmasq service.
 
+* Deployment
+	1. Store the get_ip.sh
+	2. Modify `path` in `collectclient.py` to the path of `get_ip.sh`
+	3. `mv collectclient.py /etc/cron.hourly/collectclient`
+    4. Run the collectserver.py in the background or using [supervisor](https://supervisord.org/)
+
 * Future works
+
 Find a better solution without restarting the dnsmasq service
+
