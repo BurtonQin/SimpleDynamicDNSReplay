@@ -18,7 +18,7 @@ Note that the hostnames of all the clients in one server domain shall not be the
 
 Receive the report and change the /etc/hosts, then restart the dnsmasq service.
 Note the domain name of the hostname is formed by concatenating the hostname and `.gtensor.com`.
-e.g. a server with hostname test1 gets the domain name `aaa.gtensor.com` for ipv4 and `aaa6.gtensor.com` for ipv6.
+e.g. a server with hostname aaa gets the domain name `aaa.gtensor.com` for ipv4 and `aaa6.gtensor.com` for ipv6.
 
 * Deployment
 	1. client: Store the get_ip.sh
