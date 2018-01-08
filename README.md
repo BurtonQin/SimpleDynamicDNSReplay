@@ -3,6 +3,7 @@
 The IP of the servers in campus network keeps changing due to DHCP, thus I build a local DNS relay server without bothering with the DynDNS.
 
 * Protocol Format
+
 For simplicity, I use UDP as the transport layer protocol. The message format is as follows:
 ```
 HOSTNAME\nIPv4\nIPv6
