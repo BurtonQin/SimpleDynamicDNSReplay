@@ -16,12 +16,16 @@ Note that the hostnames of all the clients in one server domain shall not be the
 * Server
 
 Receive the report and change the /etc/hosts, then restart the dnsmasq service.
+Note the domain name of the hostname is formed by concatenating the hostname and `.gtensor.com`.
+e.g. a server with hostname test1 gets the domain name `aaa.gtensor.com` for ipv4 and `aaa6.gtensor.com` for ipv6.
 
 * Deployment
 	1. client: Store the get_ip.sh
 	2. client: Modify `path` in `collectclient.py` to the path of `get_ip.sh`
 	3. client: `mv collectclient.py /etc/cron.hourly/collectclient`
-    4. server: Run the collectserver.py in the background or using [supervisor](https://supervisord.org/)
+    4. server: Install dnsmasq `sudo apt-get install dnsmasq`
+    5. server: Modify the `/etc/dnsmasq.conf` and add local domain names to local part. e.g. `local=/aaa.gtensor.com/bbb.gtensor.com/ccc.gtensor.com/`
+    6. server: Run the collectserver.py in the background or using [supervisor](https://supervisord.org/)
 
 * Future works
 
